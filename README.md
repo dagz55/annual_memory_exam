@@ -25,6 +25,10 @@ This script provides a Textual UI for examining system memory usage.
    ```
    python anual_memory_exam-BETA.py
    ```
+   or
+   ```
+   python ame.py
+   ```
 
 The script will automatically install any required packages that are missing.
 
