@@ -1,4 +1,4 @@
-# anual_memory_exam
+# annual_memory_exam
 The annual memory exam script is the first to display the 'Wolverine' code. Please take a look at the wiki for more details.
 
 
