@@ -1,0 +1,21 @@
+---
+- name: Gather and display top memory consumers and RES usage
+  hosts: all
+  gather_facts: no
+  tasks:
+
+    - name: Run 'top' command and gather top 5 memory consumers
+      shell: top -b -o %MEM | head -n 12 | tail -n 5
+      register: top_mem_output
+
+    - name: Run 'top' command and gather top 5 RES memory consumers
+      shell: top -b -o RES | head -n 12 | tail -n 5
+      register: top_res_output
+
+    - name: Display top 5 memory consumers
+      debug:
+        msg: "Top 5 Memory Consumers:\n{{ top_mem_output.stdout_lines | join('\n') }}"
+
+    - name: Display top 5 RES memory consumers
+      debug:
+        msg: "Top 5 RES Memory Consumers:\n{{ top_res_output.stdout_lines | join('\n') }}"
